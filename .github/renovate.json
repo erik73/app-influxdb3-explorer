@@ -1,0 +1,78 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["helpers:pinGitHubActionDigests"],
+  "rebaseWhen": "behind-base-branch",
+  "dependencyDashboard": true,
+  "labels": ["dependencies", "no-stale"],
+  "commitMessagePrefix": "⬆️",
+  "commitMessageTopic": "{{depName}}",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["//Dockerfile$/", "//build.yaml$/"],
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+        "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)\\s+",
+        "(aarch64|amd64):\\s[\"']?(?<depName>.*?):(?<currentValue>.*?)[\"']?\\s"
+      ],
+      "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["//Dockerfile$/"],
+      "matchStrings": [
+        "ARG S6_OVERLAY_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
+      ],
+      "datasourceTemplate": "github-tags",
+      "versioningTemplate": "loose",
+      "depNameTemplate": "just-containers/s6-overlay"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["//Dockerfile$/"],
+      "matchStrings": [
+        "ARG BASHIO_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "hassio-addons/bashio",
+      "versioningTemplate": "semver"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["//Dockerfile$/"],
+      "matchStrings": [
+        "ARG TEMPIO_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "home-assistant/tempio",
+      "versioningTemplate": "loose"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["//Dockerfile$/"],
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+        "\\s\\s(?<package>[a-z0-9-]+)=(?<currentValue>[a-z0-9-_.]+)\\s+"
+      ],
+      "versioningTemplate": "loose",
+      "datasourceTemplate": "repology",
+      "depNameTemplate": "alpine_3_22/{{package}}"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": ["repology"],
+      "automerge": true
+    },
+    {
+      "groupName": "App base image",
+      "matchDatasources": ["docker"]
+    },
+    {
+      "groupName": "App base image",
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    }
+  ]
+}
