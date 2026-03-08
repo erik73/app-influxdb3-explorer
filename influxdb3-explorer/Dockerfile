@@ -69,6 +69,7 @@ RUN \
     && apk del --no-cache --purge .build-dependencies \
     && rm -f -r \
         /tmp/* \
+        /app-root/entrypoint.sh \
         /etc/nginx
 
 # Copy root filesystem
