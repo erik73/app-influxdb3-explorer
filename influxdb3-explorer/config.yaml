@@ -1,9 +1,9 @@
 ---
-name: InfluxDB3 Explorer
+name: Example
 version: dev
-slug: influxdb3-explorer
-description: InfluxDB3 Explorer
-url: https://github.com/erik73/hassio-addons
+slug: example
+description: Example app by Home Assistant Community Apps
+url: https://github.com/hassio-addons/app-example
 init: false
 arch:
   - aarch64
@@ -16,5 +16,7 @@ ports_description:
   80/tcp: InfluxDB3 Explorer
 options:
   log_level: info
+  seconds_between_quotes: 5
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)
+  seconds_between_quotes: int(1,120)
