@@ -1,4 +1,4 @@
-# Home Assistant App: InluxDB3 Explorer
+# Home Assistant App: InfluxDB3 Explorer
 
 ![Project Stage][project-stage-shield]
 
@@ -13,7 +13,7 @@ Management web interface for InfluxDB3.
 
 ## About
 
-This app provides a management web interface for the InluxDB3 app located in this repo.
+This app provides a management web interface for the InfluxDB3 app located in this repo.
 
 ## Support
 

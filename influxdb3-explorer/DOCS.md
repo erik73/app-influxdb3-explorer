@@ -1,4 +1,4 @@
-# Home Assistant App: InluxDB3 Explorer
+# Home Assistant App: InfluxDB3 Explorer
 
 InfluxDB3 Explorer app for Home Assistant
 
