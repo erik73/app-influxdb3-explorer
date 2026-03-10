@@ -10,10 +10,9 @@ Management web interface for InfluxDB3: InfluxDB3 Explorer
 
 You reach the InfluxDB3 Explorerer interface by clicking the Web UI button in the app
 page to use WebUI feature.
-You can also reach the app directly by pointing your browser to 
+You can also reach the app directly by pointing your browser to
 http://{homeassistant IP or hostname}:8888.
 The port can be changed in the network section in the app settings.
-
 
 ## Installation
 
