@@ -1,7 +1,7 @@
 ---
-name: Example
+name: InfluxDB3 Explorer
 version: dev
-slug: example
+slug: influxdb3-explorer
 description: Example app by Home Assistant Community Apps
 url: https://github.com/hassio-addons/app-example
 init: false
