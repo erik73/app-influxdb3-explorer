@@ -2,6 +2,7 @@
 name: InfluxDB3 Explorer
 version: dev
 slug: influxdb3-explorer
+stage: experimental
 description: Example app by Home Assistant Community Apps
 url: https://github.com/hassio-addons/app-example
 init: false
