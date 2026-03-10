@@ -1,8 +1,6 @@
-# Home Assistant Community App: Example
+# Home Assistant App: InluxDB3 Explorer
 
-[![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
-[![License][license-shield]](LICENSE.md)
 
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]
@@ -11,78 +9,23 @@
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
 
-[![Discord][discord-shield]][discord]
-[![Community Forum][forum-shield]][forum]
-
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
-
-[![Support Frenck on Patreon][patreon-shield]][patreon]
-
-Example app by Home Assistant Community Apps.
+Management web interface for InfluxDB3.
 
 ## About
 
-This is an example app for Home Assistant. When started, it displays a
-random quote every 5 seconds.
-
-It shows off several features and structures like:
-
-- Full blown GitHub repository.
-- General Dockerfile structure and setup.
-- The use of the `config.yaml` and `build.yaml` files.
-- General structure on how to use S6 overlay with services.
-- Basic usage of Bashio.
-- Continuous integration and deployment using GitHub Actions.
-- Deployment to the GitHub Container registry.
-- Small use of the Bash function library in our base images.
-- The use of Docker label schema.
-
-[:books: Read the full app documentation][docs]
+This app provides a management web interface for the InluxDB3 app located in this repo.
 
 ## Support
 
 Got questions?
 
-You have several options to get them answered:
-
-- The [Home Assistant Community Apps Discord chat server][discord] for app
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
-
-You could also [open an issue here][issue] GitHub.
-
-## Contributing
-
-This is an active open-source project. We are always open to people who want to
-use the code or contribute to it.
-
-We have set up a separate document containing our
-[contribution guidelines](.github/CONTRIBUTING.md).
-
-Thank you for being involved! :heart_eyes:
-
-## Authors & contributors
-
-The original setup of this repository is by [Franck Nijhof][frenck].
-
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
-
-## We have got some Home Assistant apps for you
-
-Want some more functionality to your Home Assistant instance?
-
-We have created multiple apps for Home Assistant. For a full list, check out
-our [GitHub Repository][repository].
+You could [open an issue here][issue] GitHub.
 
 ## License
 
 MIT License
 
-Copyright (c) 2017-2026 Franck Nijhof
+Copyright (c) 2019-2026 Erik Hilton
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -104,27 +47,10 @@ SOFTWARE.
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/app-example.svg
-[commits]: https://github.com/hassio-addons/app-example/commits/main
-[contributors]: https://github.com/hassio-addons/app-example/graphs/contributors
-[discord-ha]: https://discord.gg/c5DvZ4e
-[discord-shield]: https://img.shields.io/discord/478094546522079232.svg
-[discord]: https://discord.me/hassioaddons
-[docs]: https://github.com/hassio-addons/app-example/blob/main/example/DOCS.md
-[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
-[frenck]: https://github.com/frenck
-[github-actions-shield]: https://github.com/hassio-addons/app-example/workflows/CI/badge.svg
-[github-actions]: https://github.com/hassio-addons/app-example/actions
-[github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
-[github-sponsors]: https://github.com/sponsors/frenck
-[issue]: https://github.com/hassio-addons/app-example/issues
-[license-shield]: https://img.shields.io/github/license/hassio-addons/app-example.svg
+[commits-shield]: https://img.shields.io/github/commit-activity/y/erik73/app-influxdb3-explorer.svg
+[commits]: https://github.com/erik73/app-influxdb3-explorer/commits/main
+[github-actions-shield]: https://github.com/erik73/app-influxdb3-explorer/workflows/CI/badge.svg
+[github-actions]: https://github.com/erik73/app-influxdb3-explorer/actions
+[issue]: https://github.com/erik73/app-influxdb3-explorer/issues
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2026.svg
-[patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
-[patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[reddit]: https://reddit.com/r/homeassistant
-[releases-shield]: https://img.shields.io/github/release/hassio-addons/app-example.svg
-[releases]: https://github.com/hassio-addons/app-example/releases
-[repository]: https://github.com/hassio-addons/repository
