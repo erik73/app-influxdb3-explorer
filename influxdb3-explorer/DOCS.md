@@ -30,12 +30,18 @@ After installation you are presented with a port assignment of 8888.
 This can be changed in the network section.
 
 Start the app and click the "Open Web UI" button or point your browser
-directly to the app as per the intructions above.
+directly to the app as per the intructions above. For example:
+http://{homeassistant IP or hostname}:8888
 
 ## Configuration
 
 Once you reach the InfluxDB3 Explorer you have to fill in the correct
-IP address and credentials to connect to your InfluxDB3 instance.
+IP address and credentials to connect to your InfluxDB3 server instance.
+
+## Known issues and limitations
+
+- No SSL support yet
+- No ingress support. Only Web UI.
 
 ## Support
 
