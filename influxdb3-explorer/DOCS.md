@@ -1,139 +1,50 @@
-# Home Assistant Community App: Example
+# Home Assistant App: InluxDB3 Explorer
 
-This is an example app for Home Assistant. When started, it displays a
-random quote every 5 seconds.
+InfluxDB3 Explorer app for Home Assistant
 
-It shows off several features and structures like:
+![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield]
 
-- Full blown GitHub repository.
-- General Dockerfile structure and setup.
-- The use of the `config.yaml` and `build.yaml` files.
-- General shell scripting structure (`run.sh`).
-- Quality assurance using CodeClimate.
-- Continuous integration and deployment using GitLab.
-- Usage of the Home Assistant Community Apps build environment.
-- Small use of the Bash function library in our base images.
-- The use of Docker label schema.
+## About
+
+Management web interface for InfluxDB3: InfluxDB3 Explorer
+
+You reach the InfluxDB3 Explorerer interface by clicking the Web UI button in the app
+page to use WebUI feature.
+You can also reach the app directly by pointing your browser to 
+http://{homeassistant IP or hostname}:8888.
+The port can be changed in the network section in the app settings.
+
 
 ## Installation
 
-The installation of this app is pretty straightforward and not different in
-comparison to installing any other Home Assistant app.
+Follow these steps to get the app installed on your system:
 
-1. Click the Home Assistant My button below to open the app on your Home
-   Assistant instance.
+Add the repository `https://github.com/erik73/hassio-addons`.
+Find the "InfluxDB3 Explorer" app and click it.
+Click on the "INSTALL" button.
 
-   [![Open this app in your Home Assistant instance.][addon-badge]][addon]
+## How to use
 
-1. Click the "Install" button to install the app.
-1. Start the "Example" app.
-1. Check the logs of the "Example" app to see it in action.
+### Starting the app
+
+After installation you are presented with a port assignment of 8888.
+This can be changed in the network section.
+
+Start the app and click the "Open Web UI" button or point your browser
+directly to the app as per the intructions above.
 
 ## Configuration
 
-Eventought this app is just an example app, it does come with some
-configuration options to play around with.
-
-**Note**: _Remember to restart the app when the configuration is changed._
-
-Example app configuration:
-
-```yaml
-log_level: info
-seconds_between_quotes: 5
-```
-
-### Option: `log_level`
-
-The `log_level` option controls the level of log output by the app and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
-
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. App becomes unusable.
-
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
-
-### Option: `seconds_between_quotes`
-
-Sets the number of seconds between the output of each quote. The value
-must be between `1` and `120` seconds. This value is set to `5` seconds by
-default.
-
-## Changelog & Releases
-
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
-
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
-
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+Once you reach the InfluxDB3 Explorer you have to fill in the correct
+IP address and credentials to connect to your InfluxDB3 instance.
 
 ## Support
 
 Got questions?
 
-You have several options to get them answered:
+You could [open an issue here][issue] GitHub.
 
-- The [Home Assistant Community Apps Discord chat server][discord] for app
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
-
-You could also [open an issue here][issue] GitHub.
-
-## Authors & contributors
-
-The original setup of this repository is by [Franck Nijhof][frenck].
-
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
-
-## License
-
-MIT License
-
-Copyright (c) 2017-2026 Franck Nijhof
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-[addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
-[addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_example&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository
-[contributors]: https://github.com/hassio-addons/app-example/graphs/contributors
-[discord-ha]: https://discord.gg/c5DvZ4e
-[discord]: https://discord.me/hassioaddons
-[forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
-[frenck]: https://github.com/frenck
-[issue]: https://github.com/hassio-addons/app-example/issues
-[reddit]: https://reddit.com/r/homeassistant
-[releases]: https://github.com/hassio-addons/app-example/releases
-[semver]: http://semver.org/spec/v2.0.0.html
+[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
+[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
+[issue]: https://github.com/erik73/app-influxdb3-explorer/issues
+[repository]: https://github.com/erik73/hassio-addons
