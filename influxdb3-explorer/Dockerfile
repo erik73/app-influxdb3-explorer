@@ -36,7 +36,7 @@ RUN \
         bash=5.3.3-r1 \
         jq=1.8.1-r0 \
     \
-    && chmod -r 644 /var/log \
+    && chmod -R 644 /var/log \
     \
     && S6_ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then S6_ARCH="x86_64"; fi \
