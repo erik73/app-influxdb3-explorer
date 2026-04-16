@@ -1,5 +1,5 @@
 ARG BUILD_FROM=influxdata/influxdb3-ui:1.7.0
-# hadolint ignore=DL3002, DL3006
+# hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
 # Set shell
@@ -17,6 +17,7 @@ ARG BASHIO_VERSION="v0.17.5"
 ARG S6_OVERLAY_VERSION="3.2.2.0"
 ARG TEMPIO_VERSION="2024.11.2"
 
+# hadolint ignore=DL3002
 USER root
 
 WORKDIR /
