@@ -79,6 +79,7 @@ COPY rootfs /
 # Copy s6-overlay adjustments
 COPY s6-overlay /package/admin/s6-overlay-${S6_OVERLAY_VERSION}/
 
+USER influxui
 # Copy s6-overlay adjustments
 # COPY s6-overlay /package/admin/s6-overlay-${S6_OVERLAY_VERSION}/
 
