@@ -1,5 +1,5 @@
 ARG BUILD_FROM=influxdata/influxdb3-ui:1.7.0
-hadolint ignore=DL3002
+# hadolint ignore=DL3002, DL3006
 FROM ${BUILD_FROM}
 
 # Set shell
@@ -78,9 +78,6 @@ COPY rootfs /
 
 # Copy s6-overlay adjustments
 COPY s6-overlay /package/admin/s6-overlay-${S6_OVERLAY_VERSION}/
-
-# Copy s6-overlay adjustments
-# COPY s6-overlay /package/admin/s6-overlay-${S6_OVERLAY_VERSION}/
 
 # Entrypoint & CMD
 ENTRYPOINT ["/init"]
