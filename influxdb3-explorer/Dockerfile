@@ -17,6 +17,8 @@ ARG BASHIO_VERSION="v0.17.5"
 ARG S6_OVERLAY_VERSION="3.2.2.0"
 ARG TEMPIO_VERSION="2024.11.2"
 
+USER root
+
 WORKDIR /
 
 ENV \
@@ -35,8 +37,6 @@ RUN \
         curl=8.17.0-r1 \
         bash=5.3.3-r1 \
         jq=1.8.1-r0 \
-    \
-    && chmod -R 644 /var/log \
     \
     && S6_ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then S6_ARCH="x86_64"; fi \
