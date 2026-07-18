@@ -35,7 +35,7 @@ RUN \
         xz=5.8.3-r0 \
     \
     && apk add --no-cache \
-        curl=8.19.0-r0 \
+        curl=8.20.0-r0 \
         bash=5.3.3-r1 \
         jq=1.8.1-r0 \
     \
