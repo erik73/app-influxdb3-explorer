@@ -1,13 +1,13 @@
 #!/command/with-contenv bashio
 # ==============================================================================
 # Home Assistant Community App: InfluxDB3 Explorer
-# Take down the S6 supervision tree when node fails
+# Take down the S6 supervision tree when InfluxDB3 UI fails
 # ==============================================================================
 declare exit_code
 readonly exit_code_container=$(</run/s6-linux-init-container-results/exitcode)
 readonly exit_code_service="${1}"
 readonly exit_code_signal="${2}"
-readonly service="NODE"
+readonly service="INFLUXDB3_UI"
 
 bashio::log.info \
   "Service ${service} exited with code ${exit_code_service}" \

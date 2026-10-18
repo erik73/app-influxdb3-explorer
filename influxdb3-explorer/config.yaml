@@ -16,6 +16,7 @@ ports_description:
 options:
   influxd_log_level: warn
   log_level: info
+  envvars: []
 schema:
   influxd_log_level: list(debug|info|warn|error)?
   log_level: list(trace|debug|info|notice|warning|error|fatal)

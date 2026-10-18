@@ -7,6 +7,7 @@
 bashio::log.info "Configuring environment variables for Explorer"
 
 export SESSION_SECRET_KEY="$(< /data/session_secret)"
+export UI_MODE=admin
 export INFLUXDB3_UI_DEFAULT_PORT=80
 export INFLUXDB3_UI_DEFAULT_DATA_DIR=data/db
 export PLUGIN_REGISTRY_ALLOWED_HOSTS=github.com
