@@ -2,6 +2,11 @@ ARG BUILD_FROM=influxdata/influxdb3-ui:1.11.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
+ENV \
+    S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
+    S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0 \
+    S6_CMD_WAIT_FOR_SERVICES=1
+
 # Set shell
 SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 
@@ -21,11 +26,6 @@ ARG TEMPIO_VERSION="2026.07.0"
 USER root
 
 WORKDIR /
-
-ENV \
-    S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
-    S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0 \
-    S6_CMD_WAIT_FOR_SERVICES=1
 
 RUN \
     apt-get update \
