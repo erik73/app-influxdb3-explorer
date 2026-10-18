@@ -2,8 +2,13 @@ ARG BUILD_FROM=influxdata/influxdb3-ui:1.11.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
+ENV \
+    S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
+    S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0 \
+    S6_CMD_WAIT_FOR_SERVICES=1
+
 # Set shell
-SHELL ["/bin/ash", "-o", "pipefail", "-c"]
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Build arguments
 ARG BUILD_ARCH
@@ -22,22 +27,12 @@ USER root
 
 WORKDIR /
 
-ENV \
-    S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
-    S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0 \
-    S6_CMD_WAIT_FOR_SERVICES=1
-
 RUN \
-    set -o pipefail \
+    apt-get update \
     \
-    && apk add --no-cache --virtual .build-dependencies \
-        tar=1.35-r4 \
-        xz=5.8.4-r0 \
-    \
-    && apk add --no-cache \
-        curl=8.22.0-r0 \
-        bash=5.3.3-r1 \
-        jq=1.8.2-r0 \
+    && apt-get install -y --no-install-recommends \
+        jq=1.6-2.1+deb12u3 \
+        xz-utils=5.4.1-1+deb12u2 \
     \
     && S6_ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then S6_ARCH="x86_64"; fi \
@@ -68,8 +63,12 @@ RUN \
         "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}" \
     && chmod a+x /usr/bin/tempio \
     \
-    && apk del --no-cache --purge .build-dependencies \
+    && apt-get purge -y --auto-remove \
+        xz-utils \
+    && apt-get clean \
     && rm -f -r \
+        /var/{cache,log}/* \
+        /var/lib/apt/lists/* \
         /tmp/* \
         /app-root/entrypoint.sh \
         /etc/nginx
