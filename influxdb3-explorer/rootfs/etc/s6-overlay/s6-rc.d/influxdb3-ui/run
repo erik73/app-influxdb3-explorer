@@ -1,20 +1,16 @@
 #!/command/with-contenv bashio
 # ==============================================================================
 # Home Assistant App: InfluxDB3 Explorer
-# Runs the node daemon
+# Runs the InfluxDB3 UI
 # ==============================================================================
 
 bashio::log.info "Configuring environment variables for Explorer"
 
-export DATABASE_URL=/data/db/sqlite.db
-
-if ! bashio::fs.file_exists "/data/session_secret" ; then
-    bashio::log.info "Generating new session secret key..."
-    openssl rand -hex 32 > /data/session_secret
-fi
-
 export SESSION_SECRET_KEY="$(< /data/session_secret)"
+export INFLUXDB3_UI_DEFAULT_PORT=8080
+export INFLUXDB3_UI_DEFAULT_DATA_DIR=data/db
+export PLUGIN_REGISTRY_ALLOWED_HOSTS=github.com
 
-bashio::log.info "Starting Node...."
+bashio::log.info "Starting InfluxDB3 Explorer...."
 
-exec node /app-root/_backend_app/main.js
+exec /usr/local/bin/influxdb3-ui
