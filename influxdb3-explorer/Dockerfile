@@ -31,8 +31,8 @@ RUN \
     apt-get update \
     \
     && apt-get install -y --no-install-recommends \
-        jq \
-        xz-utils \
+        jq=1.6-2.1+deb12u3 \
+        xz-utils=5.4.1-1+deb12u2 \
     \
     && S6_ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then S6_ARCH="x86_64"; fi \
