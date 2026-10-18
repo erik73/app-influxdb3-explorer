@@ -14,6 +14,8 @@ ports:
 ports_description:
   80/tcp: InfluxDB3 Explorer
 options:
+  influxd_log_level: warn
   log_level: info
 schema:
+  influxd_log_level: list(debug|info|warn|error)?
   log_level: list(trace|debug|info|notice|warning|error|fatal)

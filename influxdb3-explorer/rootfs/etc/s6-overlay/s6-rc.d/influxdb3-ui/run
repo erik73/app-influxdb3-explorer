@@ -10,6 +10,7 @@ export SESSION_SECRET_KEY="$(< /data/session_secret)"
 export INFLUXDB3_UI_DEFAULT_PORT=8080
 export INFLUXDB3_UI_DEFAULT_DATA_DIR=data/db
 export PLUGIN_REGISTRY_ALLOWED_HOSTS=github.com
+export INFLUXDB3_LOG_FILTER=$(bashio::config 'influxd_log_level')
 
 bashio::log.info "Starting InfluxDB3 Explorer...."
 
