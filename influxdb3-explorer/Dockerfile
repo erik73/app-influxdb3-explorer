@@ -31,9 +31,8 @@ RUN \
     apt-get update \
     \
     && apt-get install -y --no-install-recommends \
-        curl=8.14.1-2+deb13u5 \
-        jq=1.7.1-6+deb13u4 \
-        xz-utils=5.8.1-1+deb13u1 \
+        jq \
+        xz-utils \
     \
     && S6_ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then S6_ARCH="x86_64"; fi \
