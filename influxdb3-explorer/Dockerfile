@@ -69,7 +69,7 @@ RUN \
     && apt-get clean \
     && rm -f -r \
         /var/{cache,log}/* \
-        /var/lib/apt/lists/*
+        /var/lib/apt/lists/* \
         /tmp/* \
         /app-root/entrypoint.sh \
         /etc/nginx
