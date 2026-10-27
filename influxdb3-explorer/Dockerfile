@@ -1,4 +1,4 @@
-ARG BUILD_FROM=influxdata/influxdb3-ui:1.11.1
+ARG BUILD_FROM=influxdata/influxdb3-ui:1.11.2
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 

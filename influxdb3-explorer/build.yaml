@@ -1,4 +1,4 @@
 ---
 build_from:
-  aarch64: influxdata/influxdb3-ui:1.11.1
-  amd64: influxdata/influxdb3-ui:1.11.1
+  aarch64: influxdata/influxdb3-ui:1.11.2
+  amd64: influxdata/influxdb3-ui:1.11.2
